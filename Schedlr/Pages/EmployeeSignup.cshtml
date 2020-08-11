@@ -5,29 +5,127 @@
 }
 <!-- anti forgery tokens offers security against users attempting to bypass the form by "pretending" to enter values-->
 
-@Html.AntiForgeryToken() 
+@Html.AntiForgeryToken()
 
-<h1>Create Account</h1>
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <h1>Create Account</h1>
 
-<div class="form-horizontal">
+        <form method="post">
 
-<form method="post">
-    <!-- asp-for links the input text to a property of an object in the model-->
-    <input type="text" asp-for="Employee.EmployeeId" placeholder="Employee ID" />
-    <input type="text" asp-for="Employee.EmployeeJobTitle" placeholder="Job Title" />
-    <input type="text" asp-for="Employee.FirstName" placeholder="First Name" />
-    <input type="text" asp-for="Employee.LastName" placeholder="Last Name" />
-    <input type="text" asp-for="Employee.EmailAddress" placeholder="Email Address" />
-    <input type="text" asp-for="Employee.ConfirmEmail" placeholder="Confirm Email" />
-    <input type="text" asp-for="Employee.Password" placeholder="Password" />
-    <input type="text" asp-for="Employee.ConfirmPassword" placeholder="Confirm Password" />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <!-- asp-for links the input text to a property of an object in the model-->
+            <div class="form-group">
+                @Html.LabelFor(model => model.Employee.EmployeeId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+
+                    @Html.EditorFor(model => model.Employee.EmployeeId, new { htmlAttributes = new { @class = "form-control form" } })
+                    @Html.ValidationMessageFor(model => model.Employee.EmployeeId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Employee.EmployeeJobTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.Employee.EmployeeJobTitle, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Employee.EmployeeJobTitle, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Employee.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.Employee.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Employee.FirstName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Employee.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.Employee.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Employee.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Employee.EmailAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.Employee.EmailAddress, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Employee.EmailAddress, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Employee.ConfirmEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.Employee.ConfirmEmail, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Employee.ConfirmEmail, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Employee.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.Employee.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Employee.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Employee.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.Employee.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Employee.ConfirmPassword, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <!--<div class="form-group">
+                <div class="col-md-10">
+                    <input type="text" asp-for="Employee.EmployeeJobTitle" placeholder="Job Title" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="text" asp-for="Employee.FirstName" placeholder="First Name" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="text" asp-for="Employee.LastName" placeholder="Last Name" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="text" asp-for="Employee.EmailAddress" placeholder="Email Address" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="text" asp-for="Employee.ConfirmEmail" placeholder="Confirm Email" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="text" asp-for="Employee.Password" placeholder="Password" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="text" asp-for="Employee.ConfirmPassword" placeholder="Confirm Password" />
+                </div>
+            </div> -->
 
 
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-5">
+                    <input type="submit" value="Create Account" class="btn btn-block btn-outline-dark" />
+                </div>
+
+            </div>
+        </form>
 
 
+    </div>
+}
 
-
-
-    <button type="submit">Login</button>
-</form>
+<div>
+    @Html.ActionLink("Back to Home", "Index")
 </div>
+
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

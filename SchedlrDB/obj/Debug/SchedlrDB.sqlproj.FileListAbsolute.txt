@@ -1,0 +1,6 @@
+C:\Users\CBrew\Documents\Schedlr\Schedlr\SchedlrDB\bin\Debug\SchedlrDB.dacpac
+C:\Users\CBrew\Documents\Schedlr\Schedlr\SchedlrDB\bin\Debug\SchedlrDB.dll
+C:\Users\CBrew\Documents\Schedlr\Schedlr\SchedlrDB\bin\Debug\SchedlrDB.pdb
+C:\Users\CBrew\Documents\Schedlr\Schedlr\SchedlrDB\obj\Debug\SchedlrDB.sqlprojAssemblyReference.cache
+C:\Users\CBrew\Documents\Schedlr\Schedlr\SchedlrDB\obj\Debug\SchedlrDB.dll
+C:\Users\CBrew\Documents\Schedlr\Schedlr\SchedlrDB\obj\Debug\SchedlrDB.pdb

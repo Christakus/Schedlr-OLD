@@ -4,6 +4,16 @@
     "C:\\Users\\CBrew\\Documents\\Schedlr\\Schedlr\\Schedlr\\Schedlr.csproj": {}
   },
   "projects": {
+    "C:\\Users\\CBrew\\Documents\\Schedlr\\Schedlr\\DataLibrary\\DataLibrary.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\CBrew\\Documents\\Schedlr\\Schedlr\\DataLibrary\\DataLibrary.csproj",
+        "projectName": "DataLibrary",
+        "projectPath": "C:\\Users\\CBrew\\Documents\\Schedlr\\Schedlr\\DataLibrary\\DataLibrary.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "C:\\Users\\CBrew\\Documents\\Schedlr\\Schedlr\\Schedlr\\Schedlr.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -30,7 +40,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\CBrew\\Documents\\Schedlr\\Schedlr\\DataLibrary\\DataLibrary.csproj": {
+                "projectPath": "C:\\Users\\CBrew\\Documents\\Schedlr\\Schedlr\\DataLibrary\\DataLibrary.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -41,6 +55,24 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.35, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
