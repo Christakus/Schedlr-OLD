@@ -1,0 +1,33 @@
+﻿@page
+@model EmployeeSignupModel
+@{
+    ViewData["Title"] = "Sign Up";
+}
+<!-- anti forgery tokens offers security against users attempting to bypass the form by "pretending" to enter values-->
+
+@Html.AntiForgeryToken() 
+
+<h1>Create Account</h1>
+
+<div class="form-horizontal">
+
+<form method="post">
+    <!-- asp-for links the input text to a property of an object in the model-->
+    <input type="text" asp-for="Employee.EmployeeId" placeholder="Employee ID" />
+    <input type="text" asp-for="Employee.EmployeeJobTitle" placeholder="Job Title" />
+    <input type="text" asp-for="Employee.FirstName" placeholder="First Name" />
+    <input type="text" asp-for="Employee.LastName" placeholder="Last Name" />
+    <input type="text" asp-for="Employee.EmailAddress" placeholder="Email Address" />
+    <input type="text" asp-for="Employee.ConfirmEmail" placeholder="Confirm Email" />
+    <input type="text" asp-for="Employee.Password" placeholder="Password" />
+    <input type="text" asp-for="Employee.ConfirmPassword" placeholder="Confirm Password" />
+
+
+
+
+
+
+
+    <button type="submit">Login</button>
+</form>
+</div>

@@ -1,0 +1,14 @@
+﻿@page
+@model UserLoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1> Login Page</h1>
+
+<form method="post">
+    <!-- asp-for links the input text to a property of an object in the model-->
+    <input type="text" asp-for="Login.Username" placeholder="Username.." />
+    <input type="text" asp-for="Login.Password" placeholder="Password.." />
+    <button type="submit">Login</button>
+</form>
