@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Schedlr.Models;
+using static DataLibrary.BusinessLogic.EmployeeProcessor; // new function to add static class ;)
 
 namespace Schedlr.Pages
 {
@@ -30,11 +32,17 @@ namespace Schedlr.Pages
                 return Page();
             }
 
+            var data = FindEmployee(Login.Username); // getting the employee with the used Email address
+
+            EmployeeModel loggedEmployee = new EmployeeModel(data.EmployeeId, data.JobTitle, data.FirstName, 
+                                                    data.LastName, data.EmailAddress);
+            
+         
+            
             // Check Model Against Database
 
             // anonymous object being passed back to index, to welcome the Username
-            return RedirectToPage("./Index", new { Login.Username });
+            return RedirectToPage("./Index",  loggedEmployee );
         }
-
     }
 }

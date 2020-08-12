@@ -8,6 +8,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using DataLibrary.Models;
 
 namespace DataLibrary.DataAccess
 {
@@ -18,8 +19,7 @@ namespace DataLibrary.DataAccess
         public static string GetConnectionString(string connectionString = "SchedlrDB")
         {
             return ConfigurationManager.ConnectionStrings[connectionString].ConnectionString;
-           
-            
+                     
         }
 
         public static List<T> LoadData<T>(string sql)
@@ -35,6 +35,14 @@ namespace DataLibrary.DataAccess
             using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
             {
                 return cnn.Execute(sql, data); // executing sql to database and returns number of rows affected
+            }
+        }
+
+        public static List<T> LoadEmployee<T>(string sql, string email)
+        {
+            using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
+            {
+                return cnn.Query<T>(sql, new { data = new string[] { email } } ).ToList(); // executing sql to database and returns number of rows affected
             }
         }
     }

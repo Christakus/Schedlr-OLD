@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Schedlr.Models;
 
 namespace Schedlr.Pages
 {
@@ -18,13 +19,11 @@ namespace Schedlr.Pages
         }
 
         [BindProperty(SupportsGet = true)]
-        public string Username { get; set; }
+        public EmployeeModel loggedEmployee { get; set; }
         public void OnGet()
         {
-            if (string.IsNullOrWhiteSpace(Username))
-            {
-                Username = "Batman";
-            }
+            string name = loggedEmployee.FirstName;
+            
         }
     }
 }

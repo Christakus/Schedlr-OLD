@@ -8,6 +8,21 @@ namespace Schedlr.Models
 {
     public class EmployeeModel
     {
+
+        public EmployeeModel()
+        {
+
+        }
+
+        public EmployeeModel(int id, string jobTitle, string firstName, string lastName, string email)
+        {
+            EmployeeId = id;
+            EmployeeJobTitle = jobTitle;
+            FirstName = firstName;
+            LastName = lastName;
+            EmailAddress = email;
+            ConfirmEmail = email;
+        }
         //Display is modifying how the string is displayed on the User Interface
         [Display(Name = "Employee ID")]
         [Range(100000, 999999, ErrorMessage = "ID must be 6-Digits" )] // the minimum and maximum numbers of a users employee ID

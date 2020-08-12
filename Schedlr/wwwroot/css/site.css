@@ -12,6 +12,12 @@ a {
   color: #0366d6;
 }
 
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
@@ -61,6 +67,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  height: 100%
 }
 .footer {
   position: absolute;

@@ -39,5 +39,16 @@ namespace DataLibrary.BusinessLogic
             return SQLDataAccess.LoadData<EmployeeModel>(sql);
         }
 
+
+        public static EmployeeModel FindEmployee(string email)
+        {
+            //string[] data = new string[1];
+            string sql = @"select * from dbo.Employee where EmailAddress in @data";
+
+            List<EmployeeModel> loggedEmployee = SQLDataAccess.LoadEmployee<EmployeeModel>(sql, email);
+
+            return loggedEmployee[0];
+
+        }
     }
 }
