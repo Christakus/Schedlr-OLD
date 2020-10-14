@@ -8,6 +8,27 @@ html, body {
     font-size: 14px;
 }
 
+.shiftList
+ {
+    text-align: left;
+    margin-bottom: 5px;
+
+    height: 30px;
+    line-height: 30px;
+
+
+}
+.scrollBar {
+    overflow-y:scroll;
+    height: 400px;
+}
+ 
+.shiftItem {
+    border-style: ridge;
+    list-style-type: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
 
 
