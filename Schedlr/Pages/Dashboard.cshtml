@@ -8,19 +8,35 @@
 </div>
 
 <div class="container">
-   
-        <ul class="nav nav-pills">
-            @for (int i = 0; i < Model.Shifts.Count; i++)
-            {
-                <li> <a href="#"> @Model.Shifts[i].ShiftStart @Model.Shifts[i].ShiftEnd</a></li>
-            }
+    <div class=" col-md-5 scrollBar">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Day & Date</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Start</th>
+                    <th scope="col">Finish</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Shifts.Count; i++)
+                {
+                    <tr>
+                        <th scope="row">@Model.Shifts[i].ShiftID</th>
+                        <td>N/A</td>
+                        <td>@Model.Shifts[i].ShiftRole</td>
+                        <td>@Model.Shifts[i].ShiftStart</td>
+                        <td>@Model.Shifts[i].ShiftEnd</td>
 
-         </ul>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
 
 
-           
-
-   
 
 </div>
 
