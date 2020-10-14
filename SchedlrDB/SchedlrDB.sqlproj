@@ -6,7 +6,7 @@
     <Name>SchedlrDB</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{93554ace-231b-424a-bc8c-f8453a682d97}</ProjectGuid>
+    <ProjectGuid>{6dbb293a-6227-4501-8c7d-d91148aac2dd}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
@@ -62,9 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Employee.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <RefactorLog Include="SchedlrDB.refactorlog" />
+    <Build Include="dbo\Tables\Shifts.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish Profiles\SchedlrDB.publish.xml" />

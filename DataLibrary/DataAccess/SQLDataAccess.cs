@@ -45,5 +45,20 @@ namespace DataLibrary.DataAccess
                 return cnn.Query<T>(sql, new { data = new string[] { email } } ).ToList(); // executing sql to database and returns number of rows affected
             }
         }
+        public static List<T> LoadByEmployeeID<T>(string sql, int id)
+        {
+            using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
+            {
+                return cnn.Query<T>(sql, new { data = new int[] { id } }).ToList(); // executing sql to database and returns number of rows affected
+            }
+        }
+
+        public static List<T> LoadShifts<T>(string sql, int id) 
+        {
+            using (IDbConnection cnn = new SqlConnection(GetConnectionString())) 
+            {
+                return cnn.Query<T>(sql, new { data = new int[] { id } }).ToList(); // getting shifts from db and return as list
+            }
+        }
     }
 }

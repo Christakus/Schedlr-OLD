@@ -1,27 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CBrew\\Documents\\Schedlr\\Schedlr\\Schedlr\\Schedlr.csproj": {}
+    "C:\\Users\\CBrew\\Documents\\Final Year Project\\Schedlr\\Schedlr\\Schedlr\\Schedlr.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CBrew\\Documents\\Schedlr\\Schedlr\\DataLibrary\\DataLibrary.csproj": {
+    "C:\\Users\\CBrew\\Documents\\Final Year Project\\Schedlr\\Schedlr\\DataLibrary\\DataLibrary.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\CBrew\\Documents\\Schedlr\\Schedlr\\DataLibrary\\DataLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\CBrew\\Documents\\Final Year Project\\Schedlr\\Schedlr\\DataLibrary\\DataLibrary.csproj",
         "projectName": "DataLibrary",
-        "projectPath": "C:\\Users\\CBrew\\Documents\\Schedlr\\Schedlr\\DataLibrary\\DataLibrary.csproj"
+        "projectPath": "C:\\Users\\CBrew\\Documents\\Final Year Project\\Schedlr\\Schedlr\\DataLibrary\\DataLibrary.csproj"
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "C:\\Users\\CBrew\\Documents\\Schedlr\\Schedlr\\Schedlr\\Schedlr.csproj": {
+    "C:\\Users\\CBrew\\Documents\\Final Year Project\\Schedlr\\Schedlr\\Schedlr\\Schedlr.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CBrew\\Documents\\Schedlr\\Schedlr\\Schedlr\\Schedlr.csproj",
+        "projectUniqueName": "C:\\Users\\CBrew\\Documents\\Final Year Project\\Schedlr\\Schedlr\\Schedlr\\Schedlr.csproj",
         "projectName": "Schedlr",
-        "projectPath": "C:\\Users\\CBrew\\Documents\\Schedlr\\Schedlr\\Schedlr\\Schedlr.csproj",
+        "projectPath": "C:\\Users\\CBrew\\Documents\\Final Year Project\\Schedlr\\Schedlr\\Schedlr\\Schedlr.csproj",
         "packagesPath": "C:\\Users\\CBrew\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CBrew\\Documents\\Schedlr\\Schedlr\\Schedlr\\obj\\",
+        "outputPath": "C:\\Users\\CBrew\\Documents\\Final Year Project\\Schedlr\\Schedlr\\Schedlr\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -41,8 +41,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\CBrew\\Documents\\Schedlr\\Schedlr\\DataLibrary\\DataLibrary.csproj": {
-                "projectPath": "C:\\Users\\CBrew\\Documents\\Schedlr\\Schedlr\\DataLibrary\\DataLibrary.csproj"
+              "C:\\Users\\CBrew\\Documents\\Final Year Project\\Schedlr\\Schedlr\\DataLibrary\\DataLibrary.csproj": {
+                "projectPath": "C:\\Users\\CBrew\\Documents\\Final Year Project\\Schedlr\\Schedlr\\DataLibrary\\DataLibrary.csproj"
               }
             }
           }
@@ -91,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

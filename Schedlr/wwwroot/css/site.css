@@ -1,12 +1,20 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+
+
 
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
     height: 100%;
-    background-image: url(images/background.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

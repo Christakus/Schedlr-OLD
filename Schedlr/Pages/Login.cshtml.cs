@@ -42,7 +42,7 @@ namespace Schedlr.Pages
             // Check Model Against Database
 
             // anonymous object being passed back to index, to welcome the Username
-            return RedirectToPage("./Index",  loggedEmployee );
+            return RedirectToPage("./Dashboard",  loggedEmployee );
         }
     }
 }

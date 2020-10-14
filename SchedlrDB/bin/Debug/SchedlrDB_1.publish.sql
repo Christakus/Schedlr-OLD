@@ -40,56 +40,19 @@ USE [$(DatabaseName)];
 
 
 GO
-/*
-The column [dbo].[Employee].[JobTitle] on table [dbo].[Employee] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
-*/
-
-IF EXISTS (select top 1 1 from [dbo].[Employee])
-    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
-
-GO
-PRINT N'Starting rebuilding table [dbo].[Employee]...';
+PRINT N'Creating [dbo].[Shifts]...';
 
 
 GO
-BEGIN TRANSACTION;
-
-SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
-
-SET XACT_ABORT ON;
-
-CREATE TABLE [dbo].[tmp_ms_xx_Employee] (
-    [Id]           INT            IDENTITY (1, 1) NOT NULL,
-    [EmployeeId]   INT            NOT NULL,
-    [JobTitle]     NVARCHAR (50)  NOT NULL,
-    [FirstName]    NVARCHAR (50)  NOT NULL,
-    [LastName]     NVARCHAR (50)  NOT NULL,
-    [EmailAddress] NVARCHAR (100) NOT NULL,
+CREATE TABLE [dbo].[Shifts] (
+    [Id]         INT            IDENTITY (1, 1) NOT NULL,
+    [ShiftId]    INT            NOT NULL,
+    [ShiftRole]  NVARCHAR (50)  NOT NULL,
+    [ShiftStart] NVARCHAR (50)  NOT NULL,
+    [ShiftEnd]   NVARCHAR (50)  NOT NULL,
+    [EmployeeId] NVARCHAR (100) NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
-
-IF EXISTS (SELECT TOP 1 1 
-           FROM   [dbo].[Employee])
-    BEGIN
-        SET IDENTITY_INSERT [dbo].[tmp_ms_xx_Employee] ON;
-        INSERT INTO [dbo].[tmp_ms_xx_Employee] ([Id], [EmployeeId], [FirstName], [LastName], [EmailAddress])
-        SELECT   [Id],
-                 [EmployeeId],
-                 [FirstName],
-                 [LastName],
-                 [EmailAddress]
-        FROM     [dbo].[Employee]
-        ORDER BY [Id] ASC;
-        SET IDENTITY_INSERT [dbo].[tmp_ms_xx_Employee] OFF;
-    END
-
-DROP TABLE [dbo].[Employee];
-
-EXECUTE sp_rename N'[dbo].[tmp_ms_xx_Employee]', N'Employee';
-
-COMMIT TRANSACTION;
-
-SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
 
 
 GO

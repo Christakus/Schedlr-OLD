@@ -50,5 +50,14 @@ namespace DataLibrary.BusinessLogic
             return loggedEmployee[0];
 
         }
+
+        public static EmployeeModel FindEmployeeByID(int id)
+        {
+            string sql = @"select * from dbo.Employee where EmployeeId in @data";
+
+            List<EmployeeModel> foundEmployee = SQLDataAccess.LoadByEmployeeID<EmployeeModel>(sql, id);
+
+            return foundEmployee[0];
+        }
     }
 }

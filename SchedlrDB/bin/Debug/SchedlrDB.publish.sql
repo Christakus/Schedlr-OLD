@@ -250,26 +250,13 @@ GO
 CREATE TABLE [dbo].[Employee] (
     [Id]           INT            IDENTITY (1, 1) NOT NULL,
     [EmployeeId]   INT            NOT NULL,
+    [JobTitle]     NVARCHAR (50)  NOT NULL,
     [FirstName]    NVARCHAR (50)  NOT NULL,
     [LastName]     NVARCHAR (50)  NOT NULL,
     [EmailAddress] NVARCHAR (100) NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
-
-GO
--- Refactoring step to update target server with deployed transaction logs
-
-IF OBJECT_ID(N'dbo.__RefactorLog') IS NULL
-BEGIN
-    CREATE TABLE [dbo].[__RefactorLog] (OperationKey UNIQUEIDENTIFIER NOT NULL PRIMARY KEY)
-    EXEC sp_addextendedproperty N'microsoft_database_tools_support', N'refactoring log', N'schema', N'dbo', N'table', N'__RefactorLog'
-END
-GO
-IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '26eff21d-158c-4fe1-8bd8-617312dd00e0')
-INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('26eff21d-158c-4fe1-8bd8-617312dd00e0')
-
-GO
 
 GO
 DECLARE @VarDecimalSupported AS BIT;

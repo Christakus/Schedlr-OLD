@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\Calendar\**" />
+    <Content Remove="wwwroot\Calendar\**" />
+    <EmbeddedResource Remove="wwwroot\Calendar\**" />
+    <None Remove="wwwroot\Calendar\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="app.config" />
   </ItemGroup>
 
