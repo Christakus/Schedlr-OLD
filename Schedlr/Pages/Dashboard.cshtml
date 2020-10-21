@@ -7,42 +7,95 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<div class="container">
+<div class=" shiftContainer">
+
+
     <div class=" col-md-5 scrollBar">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Day & Date</th>
-                    <th scope="col">Role</th>
-                    <th scope="col">Start</th>
-                    <th scope="col">Finish</th>
-                </tr>
-            </thead>
-            <tbody>
-                @for (int i = 0; i < Model.Shifts.Count; i++)
-                {
+
+
+        @for (int i = 0; i < Model.Shifts.Count; i++)
+        {
+            <a href="#" data-toggle="modal" data-target="#shift-modal" style=" color: black;">
+                <div class="card" style=" border-style: groove ;" onclick="ShowShiftInfo()">
+                    <div class="card-title" style=" background-color: black; color: white;">Date: N/A - @Model.Shifts[i].ShiftRole</div>
+                    <div class="card-body cardHover" style="text-align: center; ">
+
+                        <p>@Model.Shifts[i].ShiftStart - @Model.Shifts[i].ShiftEnd</p>
+
+
+                    </div>
+                </div>
+            </a>
+        }
+
+
+        <!--
+            <table class="table">
+                <thead>
                     <tr>
-                        <th scope="row">@Model.Shifts[i].ShiftID</th>
-                        <td>N/A</td>
-                        <td>@Model.Shifts[i].ShiftRole</td>
-                        <td>@Model.Shifts[i].ShiftStart</td>
-                        <td>@Model.Shifts[i].ShiftEnd</td>
-
+                        <th scope="col">#</th>
+                        <th scope="col">Day & Date</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Start</th>
+                        <th scope="col">Finish</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    for (int i = 0; i < Model.Shifts.Count; i++)
+                    {
+                        <tr>
+                            <th scope="row">Model.Shifts[i].ShiftID</th>
+                            <td>N/A</td>
+                            <td>model.Shifts[i].ShiftRole</td>
+                            <td>model.Shifts[i].ShiftStart</td>
+                            <td>Model.Shifts[i].ShiftEnd</td>
 
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        -->
     </div>
+    <div class="col-md-4">
+        <div class="modal fade" id="shift-modal">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="model-content">
+                    <div class="model-header">
+                        <h2> Title</h2>
+
+                    </div>
+                    <div class="modal-body">
+                        What is your name?
+
+                    </div>
+                    <div class="modal-footer">
+                        <input class="btn btn-primary" data-dismiss="modal" value="Close" />
+
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
 
 
+            </div>
+        </div>
+    </div>
 
 </div>
 
 
-@section Scripts
+        @section Scripts
 {
-    <!--  <script src="~/lib/moment.js/moment.min.js"></script> -->
-}
+
+            <script>
+                function ShowShiftInfo() {
+                    $(document).ready(function () {
+                        $("shift-modal").modal('show');
+                    });
+                }
+
+            </script>
+            <!--  <script src="~/lib/moment.js/moment.min.js"></script> -->
+        }
 
